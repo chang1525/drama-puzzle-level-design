@@ -1,0 +1,545 @@
+{
+  "level": {
+    "id": "L002",
+    "version": "1.1",
+    "name": "Classroom Crush",
+    "objective": "",
+    "hook": "Someone switched seats before class started...",
+    "difficultyTarget": "EASY",
+    "difficultySelf": "",
+    "difficultyAmbiguity": "",
+    "difficultyCombine": "",
+    "difficultyTested": false,
+    "reveal": "{M01} switched seats just to sit beside {F02}",
+    "revealWhen": [
+      "M01"
+    ],
+    "revealParentClueId": "",
+    "truth": "Ava is sitting by the window. Mason has a crush on Ava and switched seats before class so he could sit directly beside her. Leo took the seat closest to the door. Zoe sits directly in front of Mr. Reed's desk. Emma sits immediately to Zoe's right. Jake sits directly behind Leo, beside the bookshelf.",
+    "playNameMode": "KEEP",
+    "art": {
+      "backgroundAssetId": "BG02",
+      "backgroundDescription": "A simple modern classroom. Whiteboard and teacher desk at the top, door on the left, window on the right, bookshelf at the lower-left, and five clearly readable student seat positions.",
+      "tone": "Bright casual school comedy",
+      "artistNote": "Keep Door, Teacher Desk, Window, Bookshelf and all seat positions easy to read at gameplay scale. Do not overdecorate. Mason and Ava must be visually adjacent in the final truth scene.",
+      "referenceNote": "Use the greybox layout in the editor as the seating plan.",
+      "sceneItems": []
+    },
+    "ending": {
+      "imageBrief": "A light classroom comedy scene. Mason has switched seats to sit beside Ava and is obviously looking at her with a crush. Ava notices and looks suspicious. Mr. Reed remains at the teacher desk. The other students are seated normally. Keep the joke readable and simple.",
+      "endingLine": "New seat. Same crush",
+      "verdictCta": "MOVE ON",
+      "verdictMeaningVi": "Move on",
+      "imageAssetId": "ENDING02",
+      "imageSrc": "",
+      "rewardCoins": 30,
+      "normalRewardCoins": 15
+    }
+  },
+  "images": [],
+  "characters": [
+    {
+      "id": "F01",
+      "name": "Mr. Reed",
+      "role": "Teacher",
+      "type": "F",
+      "answerSet": true,
+      "x": 540,
+      "y": 340,
+      "namePool": "KEEP",
+      "appearance": [
+        "teacher outfit",
+        "glasses"
+      ],
+      "gender": "MALE",
+      "age": "adult",
+      "artistNote": "Clear teacher silhouette. Neutral expression is enough for this level.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "F01_BASE_L002",
+      "assetTrayId": "",
+      "reactionEvents": []
+    },
+    {
+      "id": "F02",
+      "name": "Ava",
+      "role": "Mason's crush",
+      "type": "F",
+      "answerSet": true,
+      "x": 820,
+      "y": 1090,
+      "namePool": "KEEP",
+      "appearance": [
+        "casual student outfit",
+        "long dark hair"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Neutral at START. When Mason is placed, react with a suspicious / awkward look toward him.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "F02_BASE_L002",
+      "assetTrayId": "",
+      "reactionEvents": [
+        {
+          "id": "RE_F02_01",
+          "triggerType": "CHAR_PLACED",
+          "triggerChars": [
+            "M01"
+          ],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_F02_01",
+              "assetId": "F02_R01_L002",
+              "emotion": "🤨",
+              "symbol": "",
+              "gaze": "AUTO",
+              "target": "M01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "name": "Mason",
+      "role": "Student / Ava's admirer",
+      "type": "M",
+      "answerSet": true,
+      "x": 580,
+      "y": 1090,
+      "namePool": "KEEP",
+      "appearance": [
+        "hoodie",
+        "slightly mischievous look"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Neutral in tray. Correct placement should clearly show him looking toward Ava.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M01_BASE_L002",
+      "assetTrayId": "M01_TRAY_L002",
+      "reactionEvents": [
+        {
+          "id": "RE_M01_01",
+          "triggerType": "SELF_PLACED",
+          "triggerChars": [],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_M01_01",
+              "assetId": "M01_R01_L002",
+              "emotion": "😍",
+              "symbol": "❤️",
+              "gaze": "AUTO",
+              "target": "F02",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "name": "Leo",
+      "role": "Student with the red backpack",
+      "type": "M",
+      "answerSet": true,
+      "x": 180,
+      "y": 760,
+      "namePool": "KEEP",
+      "appearance": [
+        "red backpack",
+        "casual student outfit"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "The red backpack must be obvious at gameplay scale.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M02_BASE_L002",
+      "assetTrayId": "M02_TRAY_L002",
+      "reactionEvents": []
+    },
+    {
+      "id": "M03",
+      "name": "Zoe",
+      "role": "Student carrying books",
+      "type": "M",
+      "answerSet": true,
+      "x": 450,
+      "y": 760,
+      "namePool": "KEEP",
+      "appearance": [
+        "stack of books",
+        "neat student outfit"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "The stack of books must remain readable in the tray and scene.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M03_BASE_L002",
+      "assetTrayId": "M03_TRAY_L002",
+      "reactionEvents": []
+    },
+    {
+      "id": "M04",
+      "name": "Jake",
+      "role": "Sleepy student",
+      "type": "M",
+      "answerSet": true,
+      "x": 180,
+      "y": 1090,
+      "namePool": "KEEP",
+      "appearance": [
+        "sleepy eyes",
+        "messy hair"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Sleepy state should be readable without relying on tiny details.",
+      "baseExpression": "😪",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [
+        "M02"
+      ],
+      "solveByElimination": false,
+      "assetBaseId": "M04_BASE_L002",
+      "assetTrayId": "M04_TRAY_L002",
+      "reactionEvents": []
+    },
+    {
+      "id": "M05",
+      "name": "Emma",
+      "role": "Student",
+      "type": "M",
+      "answerSet": true,
+      "x": 720,
+      "y": 760,
+      "namePool": "KEEP",
+      "appearance": [
+        "headphones",
+        "casual student outfit"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Simple readable student design. No special reaction needed.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [
+        "M03"
+      ],
+      "solveByElimination": false,
+      "assetBaseId": "M05_BASE_L002",
+      "assetTrayId": "M05_TRAY_L002",
+      "reactionEvents": []
+    }
+  ],
+  "clues": [
+    {
+      "id": "CL01",
+      "parent": null,
+      "text": "The student with the red backpack grabbed the seat closest to the door",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M02"
+      ],
+      "affects": [
+        "M02"
+      ]
+    },
+    {
+      "id": "CL02",
+      "parent": null,
+      "text": "The student carrying a stack of books sits directly in front of {F01}'s desk",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M03"
+      ],
+      "affects": [
+        "M03"
+      ]
+    },
+    {
+      "id": "CL03",
+      "parent": null,
+      "text": "{M01} suddenly switched to the empty seat directly beside {F02}",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M01"
+      ],
+      "affects": [
+        "M01"
+      ]
+    },
+    {
+      "id": "CL04",
+      "parent": null,
+      "text": "The student wearing headphones sits immediately to the right of the student carrying the books",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M05"
+      ],
+      "affects": [
+        "M05"
+      ]
+    },
+    {
+      "id": "CL05",
+      "parent": null,
+      "text": "{M04} sits directly behind the student closest to the door, beside the bookshelf",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M04"
+      ],
+      "affects": [
+        "M04"
+      ]
+    }
+  ],
+  "sceneEvidence": [],
+  "annotations": [
+    {
+      "id": "AN_WHITEBOARD",
+      "type": "rect",
+      "x": 270,
+      "y": 90,
+      "w": 540,
+      "h": 100,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "WHITEBOARD",
+      "textColor": "#514953",
+      "fontSize": 24,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 10,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_TEACHER_DESK",
+      "type": "rect",
+      "x": 410,
+      "y": 410,
+      "w": 260,
+      "h": 120,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "TEACHER DESK",
+      "textColor": "#514953",
+      "fontSize": 20,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 11,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_DOOR",
+      "type": "rect",
+      "x": 20,
+      "y": 530,
+      "w": 120,
+      "h": 250,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "DOOR",
+      "textColor": "#514953",
+      "fontSize": 22,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 12,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_WINDOW",
+      "type": "rect",
+      "x": 920,
+      "y": 500,
+      "w": 135,
+      "h": 220,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "WINDOW",
+      "textColor": "#514953",
+      "fontSize": 20,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 13,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_BOOKSHELF",
+      "type": "rect",
+      "x": 10,
+      "y": 1000,
+      "w": 160,
+      "h": 280,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "BOOKSHELF",
+      "textColor": "#514953",
+      "fontSize": 18,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 14,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_DESK_A",
+      "type": "rect",
+      "x": 120,
+      "y": 830,
+      "w": 150,
+      "h": 95,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "DESK",
+      "textColor": "#514953",
+      "fontSize": 16,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 20,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_DESK_B",
+      "type": "rect",
+      "x": 390,
+      "y": 830,
+      "w": 150,
+      "h": 95,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "DESK",
+      "textColor": "#514953",
+      "fontSize": 16,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 21,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_DESK_C",
+      "type": "rect",
+      "x": 660,
+      "y": 830,
+      "w": 150,
+      "h": 95,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "DESK",
+      "textColor": "#514953",
+      "fontSize": 16,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 22,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_DESK_D",
+      "type": "rect",
+      "x": 120,
+      "y": 1160,
+      "w": 150,
+      "h": 95,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "DESK",
+      "textColor": "#514953",
+      "fontSize": 16,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 23,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_DESK_E",
+      "type": "rect",
+      "x": 520,
+      "y": 1160,
+      "w": 150,
+      "h": 95,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "DESK",
+      "textColor": "#514953",
+      "fontSize": 16,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 24,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_DESK_AVA",
+      "type": "rect",
+      "x": 760,
+      "y": 1160,
+      "w": 150,
+      "h": 95,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "DESK",
+      "textColor": "#514953",
+      "fontSize": 16,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 25,
+      "visibleInPlay": true
+    }
+  ],
+  "editorSchemaVersion": "1.28"
+}

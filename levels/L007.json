@@ -1,0 +1,628 @@
+{
+  "level": {
+    "id": "L007",
+    "version": "1.1",
+    "name": "Lunch Thief",
+    "objective": "",
+    "hook": "Someone stole Maya's lunch... then joined everyone else looking for it",
+    "difficultyTarget": "MEDIUM",
+    "difficultySelf": "",
+    "difficultyAmbiguity": "",
+    "difficultyCombine": "",
+    "difficultyTested": false,
+    "reveal": "{M01} stole {F01}'s lunch and was trying to leave before anyone noticed",
+    "revealWhen": [
+      "M01"
+    ],
+    "revealParentClueId": "",
+    "truth": "This is an office break room. Maya's lunch has been stolen. Ryan is closest to the fridge, Emma is by the microwave, Lucas is by the counter, Zoe is by the sink, Liam is by the coffee machine, Nina is by the water cooler, Noah is near the door, and Ava is near the trash bin. Noah stole Maya's lunch and joined the others pretending to search for it.",
+    "playNameMode": "KEEP",
+    "art": {
+      "backgroundAssetId": "BG07",
+      "backgroundDescription": "A modern office break room with an organic layout, not a grid. Key landmarks: fridge, microwave, counter, sink, coffee machine, water cooler, door, and trash bin. Maya is fixed near an empty lunchbox.",
+      "tone": "Modern office comedy, petty workplace drama",
+      "artistNote": "This level teaches Initial State as evidence. The tray/base states must be readable before placement: Emma yawning, Ryan frustrated/irritated, Zoe worried, Liam smiling, Lucas visibly hungry, Nina staring down at her phone, and Ava clearly side-eyeing the situation. Ava's gaze can still point toward Maya as reinforcement, but the solve must not depend on reading the exact gaze target. Do not arrange the eight gameplay positions into clean rows or a perfect grid. Each position should feel naturally tied to its nearby landmark. The wrapper proving Noah stole the lunch must NOT be visible before placement; reveal it only in Noah's correct-placement reaction.",
+      "referenceNote": "Use the greybox landmark placement and character positions as the truth layout.",
+      "sceneItems": []
+    },
+    "ending": {
+      "imageBrief": "Office break room after the lunch thief is exposed. Noah looks sweaty near the door while a food wrapper or bag marked MAYA is visible with him. Maya looks angry at Noah. Ava, who had been watching Maya, now looks shocked toward Noah. The rest of the coworkers realize he had been helping them search for the lunch he stole.",
+      "endingLine": "He even helped search for it",
+      "verdictCta": "MOVE ON",
+      "verdictMeaningVi": "Move on",
+      "imageAssetId": "ENDING07",
+      "imageSrc": "",
+      "rewardCoins": 35,
+      "normalRewardCoins": 20
+    }
+  },
+  "images": [],
+  "characters": [
+    {
+      "id": "F01",
+      "name": "Maya",
+      "role": "Lunch owner",
+      "type": "F",
+      "answerSet": true,
+      "x": 540,
+      "y": 910,
+      "namePool": "KEEP",
+      "appearance": [
+        "office outfit",
+        "empty lunchbox"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Fixed. Clearly upset about the missing lunch. Empty lunchbox must be readable.",
+      "baseExpression": "😠",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "F01_BASE_L007",
+      "assetTrayId": "",
+      "reactionEvents": [
+        {
+          "id": "RE_F01_01",
+          "triggerType": "CHAR_PLACED",
+          "triggerChars": [
+            "M01"
+          ],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_F01_01",
+              "assetId": "F01_R01_L007",
+              "emotion": "😡",
+              "symbol": "💢",
+              "gaze": "AUTO",
+              "target": "M01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "name": "Noah",
+      "role": "Lunch thief",
+      "type": "M",
+      "answerSet": true,
+      "x": 205,
+      "y": 1190,
+      "namePool": "KEEP",
+      "appearance": [
+        "phone in hand",
+        "plain office outfit"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Looks normal in tray. Do not show the stolen-food wrapper before correct placement. In M01_R01, Noah becomes nervous/sweaty and a small food wrapper or lunch bag marked MAYA becomes visible as visual proof.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M01_BASE_L007",
+      "assetTrayId": "M01_TRAY_L007",
+      "reactionEvents": [
+        {
+          "id": "RE_M01_01",
+          "triggerType": "SELF_PLACED",
+          "triggerChars": [],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_M01_01",
+              "assetId": "M01_R01_L007",
+              "emotion": "😰",
+              "symbol": "💦",
+              "gaze": "AUTO",
+              "target": "F01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "name": "Emma",
+      "role": "Yawning coworker",
+      "type": "M",
+      "answerSet": true,
+      "x": 705,
+      "y": 445,
+      "namePool": "KEEP",
+      "appearance": [
+        "office outfit",
+        "tired posture"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Initial tray/base state must clearly read as yawning.",
+      "baseExpression": "🥱",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M02_BASE_L007",
+      "assetTrayId": "M02_TRAY_L007",
+      "reactionEvents": []
+    },
+    {
+      "id": "M03",
+      "name": "Ryan",
+      "role": "Frustrated coworker",
+      "type": "M",
+      "answerSet": true,
+      "x": 230,
+      "y": 390,
+      "namePool": "KEEP",
+      "appearance": [
+        "office outfit",
+        "annoyed posture"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Initial tray/base state must clearly read as frustrated/irritated, distinct from Maya's angry expression.",
+      "baseExpression": "😤",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M03_BASE_L007",
+      "assetTrayId": "M03_TRAY_L007",
+      "reactionEvents": []
+    },
+    {
+      "id": "M04",
+      "name": "Zoe",
+      "role": "Worried coworker",
+      "type": "M",
+      "answerSet": true,
+      "x": 735,
+      "y": 790,
+      "namePool": "KEEP",
+      "appearance": [
+        "office outfit",
+        "tense posture"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Initial tray/base state must clearly read as worried.",
+      "baseExpression": "😟",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M04_BASE_L007",
+      "assetTrayId": "M04_TRAY_L007",
+      "reactionEvents": []
+    },
+    {
+      "id": "M05",
+      "name": "Liam",
+      "role": "Smiling coworker",
+      "type": "M",
+      "answerSet": true,
+      "x": 250,
+      "y": 875,
+      "namePool": "KEEP",
+      "appearance": [
+        "office outfit",
+        "coffee mug"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Initial tray/base state must clearly read as smiling/cheerful.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M05_BASE_L007",
+      "assetTrayId": "M05_TRAY_L007",
+      "reactionEvents": []
+    },
+    {
+      "id": "M06",
+      "name": "Ava",
+      "role": "Side-eyeing coworker",
+      "type": "M",
+      "answerSet": true,
+      "x": 815,
+      "y": 1170,
+      "namePool": "KEEP",
+      "appearance": [
+        "office outfit",
+        "side-eye posture"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "In tray/base state, Ava must clearly read as side-eyeing/watching the situation. Keep gaze aimed toward Maya as reinforcement, but the clue must remain readable even if the player does not identify the exact gaze target. After Noah is placed, Ava reacts toward Noah.",
+      "baseExpression": "👀",
+      "baseGaze": "AUTO",
+      "baseTarget": "F01",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M06_BASE_L007",
+      "assetTrayId": "M06_TRAY_L007",
+      "reactionEvents": [
+        {
+          "id": "RE_M06_01",
+          "triggerType": "CHAR_PLACED",
+          "triggerChars": [
+            "M01"
+          ],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_M06_01",
+              "assetId": "M06_R01_L007",
+              "emotion": "😳",
+              "symbol": "!",
+              "gaze": "AUTO",
+              "target": "M01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M07",
+      "name": "Lucas",
+      "role": "Hungry coworker",
+      "type": "M",
+      "answerSet": true,
+      "x": 475,
+      "y": 645,
+      "namePool": "KEEP",
+      "appearance": [
+        "office outfit",
+        "hungry posture"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Initial tray/base state must clearly read as hungry or craving food.",
+      "baseExpression": "🤤",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M07_BASE_L007",
+      "assetTrayId": "M07_TRAY_L007",
+      "reactionEvents": []
+    },
+    {
+      "id": "M08",
+      "name": "Nina",
+      "role": "Coworker staring at phone",
+      "type": "M",
+      "answerSet": true,
+      "x": 745,
+      "y": 1010,
+      "namePool": "KEEP",
+      "appearance": [
+        "phone held low",
+        "eyes fixed on phone"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Initial tray/base pose must clearly show her staring down at her phone. This state is evidence.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M08_BASE_L007",
+      "assetTrayId": "M08_TRAY_L007",
+      "reactionEvents": []
+    }
+  ],
+  "clues": [
+    {
+      "id": "CL01",
+      "parent": null,
+      "text": "The yawning employee, the frustrated employee, and the hungry-looking employee were the three people around the fridge, microwave, and counter",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M02",
+        "M03",
+        "M07"
+      ],
+      "affects": [
+        "M02",
+        "M03",
+        "M07"
+      ]
+    },
+    {
+      "id": "CL02",
+      "parent": null,
+      "text": "The frustrated employee stood closest to the fridge",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M03"
+      ],
+      "affects": [
+        "M03"
+      ]
+    },
+    {
+      "id": "CL03",
+      "parent": null,
+      "text": "The yawning employee stood closer to the microwave than the hungry-looking employee",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M02",
+        "M07"
+      ],
+      "affects": [
+        "M02",
+        "M07"
+      ]
+    },
+    {
+      "id": "CL04",
+      "parent": null,
+      "text": "The worried employee, the smiling employee, and the employee staring at the phone were the three people around the sink, coffee machine, and water cooler",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M04",
+        "M05",
+        "M08"
+      ],
+      "affects": [
+        "M04",
+        "M05",
+        "M08"
+      ]
+    },
+    {
+      "id": "CL05",
+      "parent": null,
+      "text": "The worried employee stood closest to the sink",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M04"
+      ],
+      "affects": [
+        "M04"
+      ]
+    },
+    {
+      "id": "CL06",
+      "parent": null,
+      "text": "The smiling employee stood closer to the coffee machine than the employee staring at the phone",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M05",
+        "M08"
+      ],
+      "affects": [
+        "M05",
+        "M08"
+      ]
+    },
+    {
+      "id": "CL07",
+      "parent": null,
+      "text": "{M01} and the side-eyeing employee were the two people near the door and trash bin",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M01",
+        "M06"
+      ],
+      "affects": [
+        "M01",
+        "M06"
+      ]
+    },
+    {
+      "id": "CL08",
+      "parent": null,
+      "text": "The side-eyeing employee stood closer to the trash bin",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M06"
+      ],
+      "affects": [
+        "M01",
+        "M06"
+      ]
+    }
+  ],
+  "sceneEvidence": [],
+  "annotations": [
+    {
+      "id": "AN_FRIDGE",
+      "type": "rect",
+      "x": 70,
+      "y": 135,
+      "w": 180,
+      "h": 260,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "FRIDGE",
+      "textColor": "#514953",
+      "fontSize": 21,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 10,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_MICROWAVE",
+      "type": "rect",
+      "x": 715,
+      "y": 180,
+      "w": 230,
+      "h": 130,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "MICROWAVE",
+      "textColor": "#514953",
+      "fontSize": 19,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 11,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_COUNTER",
+      "type": "rect",
+      "x": 330,
+      "y": 500,
+      "w": 290,
+      "h": 120,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "COUNTER",
+      "textColor": "#514953",
+      "fontSize": 19,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 12,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_SINK",
+      "type": "rect",
+      "x": 735,
+      "y": 620,
+      "w": 210,
+      "h": 120,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "SINK",
+      "textColor": "#514953",
+      "fontSize": 20,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 13,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_COFFEE",
+      "type": "rect",
+      "x": 70,
+      "y": 700,
+      "w": 220,
+      "h": 160,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "COFFEE MACHINE",
+      "textColor": "#514953",
+      "fontSize": 17,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 14,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_WATER",
+      "type": "rect",
+      "x": 805,
+      "y": 865,
+      "w": 160,
+      "h": 180,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "WATER\nCOOLER",
+      "textColor": "#514953",
+      "fontSize": 17,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 15,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_DOOR",
+      "type": "rect",
+      "x": 20,
+      "y": 1040,
+      "w": 150,
+      "h": 250,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "DOOR",
+      "textColor": "#514953",
+      "fontSize": 21,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 16,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_TRASH",
+      "type": "rect",
+      "x": 850,
+      "y": 1080,
+      "w": 140,
+      "h": 170,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "TRASH\nBIN",
+      "textColor": "#514953",
+      "fontSize": 18,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 17,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_LUNCHBOX",
+      "type": "rect",
+      "x": 450,
+      "y": 810,
+      "w": 180,
+      "h": 100,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "EMPTY\nLUNCHBOX",
+      "textColor": "#514953",
+      "fontSize": 16,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 18,
+      "visibleInPlay": true
+    }
+  ],
+  "editorSchemaVersion": "1.28"
+}

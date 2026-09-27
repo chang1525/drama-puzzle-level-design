@@ -1,0 +1,431 @@
+{
+  "level": {
+    "id": "L003",
+    "version": "1.1",
+    "name": "Office Secret",
+    "objective": "",
+    "hook": "Someone accidentally called the boss \"babe\" in front of the whole team",
+    "difficultyTarget": "EASY",
+    "difficultySelf": "",
+    "difficultyAmbiguity": "",
+    "difficultyCombine": "",
+    "difficultyTested": false,
+    "reveal": "{M01} and {F01} are secretly dating",
+    "revealWhen": [
+      "M01"
+    ],
+    "revealParentClueId": "",
+    "truth": "Daniel and Sophia are secretly dating. During the team meeting, Sophia accidentally called Daniel \"babe\" and both tried to act normal. Grace noticed immediately. Sophia sits opposite Grace. Liam sits on the door side directly above Noah. Noah is holding coffee. Chloe sits opposite Liam. Emma sits directly below Chloe.",
+    "playNameMode": "KEEP",
+    "art": {
+      "backgroundAssetId": "BG03",
+      "backgroundDescription": "A simple modern office meeting room with one long rectangular meeting table. Daniel sits at the head of the table. Grace is fixed at the upper-left side. Five remaining seats form a clear left/right seating grid around the table. The office door is on the left side.",
+      "tone": "Clean modern office comedy",
+      "artistNote": "Appearance overlap is critical to the puzzle. Sophia = glasses + black blazer. Chloe = glasses + red cardigan. Emma = black blazer + ponytail. Liam = striped tie. Noah = coffee cup. These traits must be readable at gameplay scale.",
+      "referenceNote": "Use the greybox meeting-table layout in the editor as the seating plan.",
+      "sceneItems": []
+    },
+    "ending": {
+      "imageBrief": "A funny office meeting. Sophia blushes and looks toward Daniel after exposing their secret relationship. Daniel looks nervous and tries to act normal. Grace gives them a knowing side-eye. The rest of the team remains seated around the meeting table.",
+      "endingLine": "Meeting over. Gossip started",
+      "verdictCta": "MOVE ON",
+      "verdictMeaningVi": "Move on",
+      "imageAssetId": "ENDING03",
+      "imageSrc": "",
+      "rewardCoins": 30,
+      "normalRewardCoins": 15
+    }
+  },
+  "images": [],
+  "characters": [
+    {
+      "id": "F01",
+      "name": "Daniel",
+      "role": "Boss / Sophia's secret boyfriend",
+      "type": "F",
+      "answerSet": true,
+      "x": 540,
+      "y": 260,
+      "namePool": "KEEP",
+      "appearance": [
+        "dark suit",
+        "boss badge"
+      ],
+      "gender": "MALE",
+      "age": "adult",
+      "artistNote": "Clear boss silhouette. Neutral at START. Reaction should read as nervous and trying to act normal.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "F01_BASE_L003",
+      "assetTrayId": "",
+      "reactionEvents": [
+        {
+          "id": "RE_F01_01",
+          "triggerType": "CHAR_PLACED",
+          "triggerChars": [
+            "M01"
+          ],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_F01_01",
+              "assetId": "F01_R01_L003",
+              "emotion": "😰",
+              "symbol": "!",
+              "gaze": "AWAY",
+              "target": "",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "name": "Grace",
+      "role": "Team lead / notices the secret",
+      "type": "F",
+      "answerSet": true,
+      "x": 260,
+      "y": 480,
+      "namePool": "KEEP",
+      "appearance": [
+        "team lead outfit",
+        "tablet"
+      ],
+      "gender": "FEMALE",
+      "age": "adult",
+      "artistNote": "Neutral at START. After Sophia is placed, give a clear knowing side-eye.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "F02_BASE_L003",
+      "assetTrayId": "",
+      "reactionEvents": [
+        {
+          "id": "RE_F02_01",
+          "triggerType": "CHAR_PLACED",
+          "triggerChars": [
+            "M01"
+          ],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_F02_01",
+              "assetId": "F02_R01_L003",
+              "emotion": "😏",
+              "symbol": "",
+              "gaze": "AUTO",
+              "target": "M01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "name": "Sophia",
+      "role": "Employee / Daniel's secret girlfriend",
+      "type": "M",
+      "answerSet": true,
+      "x": 820,
+      "y": 480,
+      "namePool": "KEEP",
+      "appearance": [
+        "glasses",
+        "black blazer"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Critical intersection character. Both glasses and black blazer must be obvious in tray and scene.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M01_BASE_L003",
+      "assetTrayId": "M01_TRAY_L003",
+      "reactionEvents": [
+        {
+          "id": "RE_M01_01",
+          "triggerType": "SELF_PLACED",
+          "triggerChars": [],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_M01_01",
+              "assetId": "M01_R01_L003",
+              "emotion": "😳",
+              "symbol": "❤️",
+              "gaze": "AUTO",
+              "target": "F01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "name": "Liam",
+      "role": "Employee",
+      "type": "M",
+      "answerSet": true,
+      "x": 260,
+      "y": 760,
+      "namePool": "KEEP",
+      "appearance": [
+        "striped tie",
+        "office shirt"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Striped tie should be readable but does not need to function as the main clue.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M02_BASE_L003",
+      "assetTrayId": "M02_TRAY_L003",
+      "reactionEvents": []
+    },
+    {
+      "id": "M03",
+      "name": "Chloe",
+      "role": "Employee",
+      "type": "M",
+      "answerSet": true,
+      "x": 820,
+      "y": 760,
+      "namePool": "KEEP",
+      "appearance": [
+        "glasses",
+        "red cardigan"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Must clearly share the glasses trait with Sophia, but not the black blazer.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [
+        "M01",
+        "M02"
+      ],
+      "solveByElimination": false,
+      "assetBaseId": "M03_BASE_L003",
+      "assetTrayId": "M03_TRAY_L003",
+      "reactionEvents": []
+    },
+    {
+      "id": "M04",
+      "name": "Noah",
+      "role": "Employee holding coffee",
+      "type": "M",
+      "answerSet": true,
+      "x": 260,
+      "y": 1040,
+      "namePool": "KEEP",
+      "appearance": [
+        "coffee cup",
+        "rolled-up sleeves"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Coffee cup must be obvious at gameplay scale.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M04_BASE_L003",
+      "assetTrayId": "M04_TRAY_L003",
+      "reactionEvents": []
+    },
+    {
+      "id": "M05",
+      "name": "Emma",
+      "role": "Employee",
+      "type": "M",
+      "answerSet": true,
+      "x": 820,
+      "y": 1040,
+      "namePool": "KEEP",
+      "appearance": [
+        "black blazer",
+        "ponytail"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Must clearly share the black blazer trait with Sophia, but without glasses.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [
+        "M01",
+        "M03"
+      ],
+      "solveByElimination": false,
+      "assetBaseId": "M05_BASE_L003",
+      "assetTrayId": "M05_TRAY_L003",
+      "reactionEvents": []
+    }
+  ],
+  "clues": [
+    {
+      "id": "CL01",
+      "parent": null,
+      "text": "The employee sitting opposite {F02} is wearing glasses",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M01"
+      ],
+      "affects": [
+        "M01"
+      ]
+    },
+    {
+      "id": "CL02",
+      "parent": null,
+      "text": "The employee sitting opposite {F02} is wearing a black blazer",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M01"
+      ],
+      "affects": [
+        "M01"
+      ]
+    },
+    {
+      "id": "CL03",
+      "parent": null,
+      "text": "The employee holding the coffee is sitting on the door side of the table",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M04"
+      ],
+      "affects": [
+        "M04"
+      ]
+    },
+    {
+      "id": "CL04",
+      "parent": null,
+      "text": "The employee wearing the striped tie is sitting directly above the coffee holder",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M02",
+        "M04"
+      ],
+      "affects": [
+        "M02",
+        "M04"
+      ]
+    },
+    {
+      "id": "CL05",
+      "parent": null,
+      "text": "The other employee wearing glasses is sitting opposite the striped tie",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M03"
+      ],
+      "affects": [
+        "M03"
+      ]
+    },
+    {
+      "id": "CL06",
+      "parent": null,
+      "text": "The other employee in a black blazer is sitting directly below the other employee wearing glasses",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M05"
+      ],
+      "affects": [
+        "M05"
+      ]
+    }
+  ],
+  "sceneEvidence": [],
+  "annotations": [
+    {
+      "id": "AN_DOOR",
+      "type": "rect",
+      "x": 20,
+      "y": 650,
+      "w": 120,
+      "h": 260,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "DOOR",
+      "textColor": "#514953",
+      "fontSize": 22,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 9,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_MEETING_TABLE",
+      "type": "rect",
+      "x": 390,
+      "y": 390,
+      "w": 300,
+      "h": 760,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "MEETING TABLE",
+      "textColor": "#514953",
+      "fontSize": 22,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 10,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_SCREEN",
+      "type": "rect",
+      "x": 390,
+      "y": 80,
+      "w": 300,
+      "h": 90,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "PRESENTATION SCREEN",
+      "textColor": "#514953",
+      "fontSize": 18,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 11,
+      "visibleInPlay": true
+    }
+  ],
+  "editorSchemaVersion": "1.28"
+}

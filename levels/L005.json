@@ -1,0 +1,518 @@
+{
+  "level": {
+    "id": "L005",
+    "version": "1.1",
+    "name": "Fake VIP",
+    "objective": "",
+    "hook": "Someone at this launch party used a fake VIP invite to get in",
+    "difficultyTarget": "MEDIUM",
+    "difficultySelf": "",
+    "difficultyAmbiguity": "",
+    "difficultyCombine": "",
+    "difficultyTested": false,
+    "reveal": "{M01} isn't on the guest list — his VIP invite is fake",
+    "revealWhen": [
+      "M01"
+    ],
+    "revealParentClueId": "",
+    "truth": "This is a rooftop brand launch party. Maya is the host and Victor is security. Noah entered using a fake VIP invite screenshot. Liam and Ryan occupy the entrance-side pair, with Liam farther from the entrance. Zoe and Emma occupy the pair between the VIP lounge and snack table, with Zoe closer to the VIP lounge. Ava and Noah occupy the pair between the giveaway display and VIP access, with Ava closer to the giveaway display and Noah closer to security.",
+    "playNameMode": "KEEP",
+    "art": {
+      "backgroundAssetId": "BG05",
+      "backgroundDescription": "A modern rooftop launch party with an organic layout rather than a grid. Key landmarks: entrance on the left, DJ speaker upper-left, VIP lounge upper-right, snack table near center, giveaway display lower-left/center, event host on the right, and security near the lower-right VIP access area.",
+      "tone": "Modern social-media event, colorful, slightly ridiculous",
+      "artistNote": "Do not align all gameplay positions into clean rows or columns. Each slot should feel naturally tied to a landmark. For Branch 2, the Zoe/Emma pair must clearly sit between VIP LOUNGE and SNACK TABLE, with one position visibly closer to each landmark. For Branch 3, the Ava/Noah pair must clearly sit between GIVEAWAY DISPLAY and VIP ACCESS, with one position visibly closer to each landmark. Camera, striped shirt, glasses, yellow jacket, and gift bag must all read clearly at gameplay scale.",
+      "referenceNote": "Use the greybox landmarks and character positions as the truth layout.",
+      "sceneItems": []
+    },
+    "ending": {
+      "imageBrief": "At a rooftop influencer launch party, security Victor has caught Noah near the VIP area. Noah looks sweaty and guilty while Maya looks shocked. The joke is that Noah got in with a fake VIP invite screenshot. Other guests continue hanging around the speaker, lounge, snacks, and giveaway area.",
+      "endingLine": "Verified by screenshot",
+      "verdictCta": "MOVE ON",
+      "verdictMeaningVi": "Move on",
+      "imageAssetId": "ENDING05",
+      "imageSrc": "",
+      "rewardCoins": 35,
+      "normalRewardCoins": 20
+    }
+  },
+  "images": [],
+  "characters": [
+    {
+      "id": "F01",
+      "name": "Maya",
+      "role": "Event host / influencer",
+      "type": "F",
+      "answerSet": true,
+      "x": 845,
+      "y": 820,
+      "namePool": "KEEP",
+      "appearance": [
+        "event host outfit",
+        "microphone"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Must clearly read as the host. Reacts with shock when Noah is placed.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "F01_BASE_L005",
+      "assetTrayId": "",
+      "reactionEvents": [
+        {
+          "id": "RE_F01_01",
+          "triggerType": "CHAR_PLACED",
+          "triggerChars": [
+            "M01"
+          ],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_F01_01",
+              "assetId": "F01_R01_L005",
+              "emotion": "😳",
+              "symbol": "!",
+              "gaze": "AUTO",
+              "target": "M01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "name": "Victor",
+      "role": "Security",
+      "type": "F",
+      "answerSet": true,
+      "x": 875,
+      "y": 1160,
+      "namePool": "KEEP",
+      "appearance": [
+        "security uniform",
+        "earpiece"
+      ],
+      "gender": "MALE",
+      "age": "adult",
+      "artistNote": "Must clearly read as security. Reacts suspiciously/angrily toward Noah.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "F02_BASE_L005",
+      "assetTrayId": "",
+      "reactionEvents": [
+        {
+          "id": "RE_F02_01",
+          "triggerType": "CHAR_PLACED",
+          "triggerChars": [
+            "M01"
+          ],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_F02_01",
+              "assetId": "F02_R01_L005",
+              "emotion": "😠",
+              "symbol": "!",
+              "gaze": "AUTO",
+              "target": "M01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "name": "Noah",
+      "role": "Fake VIP guest",
+      "type": "M",
+      "answerSet": true,
+      "x": 700,
+      "y": 1110,
+      "namePool": "KEEP",
+      "appearance": [
+        "black jacket",
+        "phone in hand"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Do not visually reveal the fake invite before placement. Correct placement reaction should look nervous and sweaty.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M01_BASE_L005",
+      "assetTrayId": "M01_TRAY_L005",
+      "reactionEvents": [
+        {
+          "id": "RE_M01_01",
+          "triggerType": "SELF_PLACED",
+          "triggerChars": [],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_M01_01",
+              "assetId": "M01_R01_L005",
+              "emotion": "😰",
+              "symbol": "💦",
+              "gaze": "AUTO",
+              "target": "F02",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "name": "Liam",
+      "role": "Photographer",
+      "type": "M",
+      "answerSet": true,
+      "x": 245,
+      "y": 360,
+      "namePool": "KEEP",
+      "appearance": [
+        "camera",
+        "dark casual shirt"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Camera must be obvious in tray and scene.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M02_BASE_L005",
+      "assetTrayId": "M02_TRAY_L005",
+      "reactionEvents": []
+    },
+    {
+      "id": "M03",
+      "name": "Emma",
+      "role": "Guest in yellow",
+      "type": "M",
+      "answerSet": true,
+      "x": 505,
+      "y": 810,
+      "namePool": "KEEP",
+      "appearance": [
+        "yellow jacket",
+        "party wristband"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Yellow jacket must be clearly readable.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M03_BASE_L005",
+      "assetTrayId": "M03_TRAY_L005",
+      "reactionEvents": []
+    },
+    {
+      "id": "M04",
+      "name": "Ryan",
+      "role": "Guest in stripes",
+      "type": "M",
+      "answerSet": true,
+      "x": 145,
+      "y": 690,
+      "namePool": "KEEP",
+      "appearance": [
+        "striped shirt",
+        "casual party outfit"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Striped shirt must be obvious in tray and scene.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M04_BASE_L005",
+      "assetTrayId": "M04_TRAY_L005",
+      "reactionEvents": []
+    },
+    {
+      "id": "M05",
+      "name": "Zoe",
+      "role": "Guest with glasses",
+      "type": "M",
+      "answerSet": true,
+      "x": 700,
+      "y": 545,
+      "namePool": "KEEP",
+      "appearance": [
+        "glasses",
+        "smart casual outfit"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Glasses must be readable at gameplay scale.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M05_BASE_L005",
+      "assetTrayId": "M05_TRAY_L005",
+      "reactionEvents": []
+    },
+    {
+      "id": "M06",
+      "name": "Ava",
+      "role": "Guest carrying a gift bag",
+      "type": "M",
+      "answerSet": true,
+      "x": 430,
+      "y": 1110,
+      "namePool": "KEEP",
+      "appearance": [
+        "gift bag",
+        "bright party outfit"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Gift bag must be obvious in tray and scene.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M06_BASE_L005",
+      "assetTrayId": "M06_TRAY_L005",
+      "reactionEvents": []
+    }
+  ],
+  "clues": [
+    {
+      "id": "CL01",
+      "parent": null,
+      "text": "The photographer and the guest in stripes stayed near the entrance side of the party",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M02",
+        "M04"
+      ],
+      "affects": [
+        "M02",
+        "M04"
+      ]
+    },
+    {
+      "id": "CL02",
+      "parent": null,
+      "text": "The photographer was farther from the entrance than the striped guest",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M02",
+        "M04"
+      ],
+      "affects": [
+        "M02",
+        "M04"
+      ]
+    },
+    {
+      "id": "CL03",
+      "parent": null,
+      "text": "{M03} and {M05} stayed between the VIP lounge and the snack table — one closer to the lounge, the other closer to the snacks",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M03",
+        "M05"
+      ],
+      "affects": [
+        "M03",
+        "M05"
+      ]
+    },
+    {
+      "id": "CL04",
+      "parent": null,
+      "text": "The guest with glasses was closer to the VIP lounge than the guest in yellow",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M03",
+        "M05"
+      ],
+      "affects": [
+        "M03",
+        "M05"
+      ]
+    },
+    {
+      "id": "CL05",
+      "parent": null,
+      "text": "{M01} and the guest carrying the gift bag were standing between the giveaway display and VIP access",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M01",
+        "M06"
+      ],
+      "affects": [
+        "M01",
+        "M06"
+      ]
+    },
+    {
+      "id": "CL06",
+      "parent": null,
+      "text": "The guest with the gift bag stayed closer to the giveaway display than {M01}",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M01",
+        "M06"
+      ],
+      "affects": [
+        "M01",
+        "M06"
+      ]
+    }
+  ],
+  "sceneEvidence": [],
+  "annotations": [
+    {
+      "id": "AN_SPEAKER",
+      "type": "rect",
+      "x": 170,
+      "y": 170,
+      "w": 170,
+      "h": 120,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "DJ SPEAKER",
+      "textColor": "#514953",
+      "fontSize": 19,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 10,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_ENTRANCE",
+      "type": "rect",
+      "x": 20,
+      "y": 520,
+      "w": 150,
+      "h": 230,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "ENTRANCE",
+      "textColor": "#514953",
+      "fontSize": 20,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 11,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_VIP_LOUNGE",
+      "type": "rect",
+      "x": 635,
+      "y": 360,
+      "w": 300,
+      "h": 180,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "VIP LOUNGE",
+      "textColor": "#514953",
+      "fontSize": 21,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 12,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_SNACKS",
+      "type": "rect",
+      "x": 385,
+      "y": 690,
+      "w": 240,
+      "h": 140,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "SNACK TABLE",
+      "textColor": "#514953",
+      "fontSize": 19,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 13,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_GIVEAWAY",
+      "type": "rect",
+      "x": 285,
+      "y": 1010,
+      "w": 240,
+      "h": 150,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "GIVEAWAY DISPLAY",
+      "textColor": "#514953",
+      "fontSize": 17,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 14,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_VIP_ACCESS",
+      "type": "rect",
+      "x": 700,
+      "y": 1030,
+      "w": 250,
+      "h": 170,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "VIP ACCESS",
+      "textColor": "#514953",
+      "fontSize": 19,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 15,
+      "visibleInPlay": true
+    }
+  ],
+  "editorSchemaVersion": "1.28"
+}

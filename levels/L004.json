@@ -1,0 +1,406 @@
+{
+  "level": {
+    "id": "L004",
+    "version": "1.0",
+    "name": "Wedding Crasher",
+    "objective": "",
+    "hook": "Someone in this wedding photo definitely wasn't invited",
+    "difficultyTarget": "MEDIUM",
+    "difficultySelf": "",
+    "difficultyAmbiguity": "",
+    "difficultyCombine": "",
+    "difficultyTested": false,
+    "reveal": "{M01} is {F01}'s ex",
+    "revealWhen": [
+      "M01"
+    ],
+    "revealParentClueId": "",
+    "truth": "This is a wedding group photo. Chloe is the bride and Ethan is the groom. From left to right the true lineup is Mia, Chloe, Ava, Ryan, Liam, Ethan, Noah. Ava is Chloe's sister. Liam is Ethan's brother. Ryan is Chloe's ex and was not invited. Mia is the maid of honor and Noah is the best man.",
+    "playNameMode": "KEEP",
+    "art": {
+      "backgroundAssetId": "BG04",
+      "backgroundDescription": "A simple wedding group-photo area with a flower arch and a clean standing line. The bride and groom are already fixed in the lineup, leaving five clear standing positions.",
+      "tone": "Bright wedding comedy with light social drama",
+      "artistNote": "Keep the lineup extremely readable from left to right. Chloe and Ethan must clearly read as bride and groom. Avoid decorations that obscure spacing between characters. The central three slots between the couple are important for the deduction, so their relative distance must be visually obvious.",
+      "referenceNote": "Use the greybox lineup in the editor as the truth arrangement.",
+      "sceneItems": []
+    },
+    "ending": {
+      "imageBrief": "A wedding group photo where Ryan, Chloe's ex, has somehow ended up between the bride's sister and the groom's brother. Ryan looks smug, Chloe looks shocked and angry, and Ethan looks confused toward Chloe. Keep the scene funny, readable, and focused on the awkward ex reveal.",
+      "endingLine": "One ex-tra guest",
+      "verdictCta": "MOVE ON",
+      "verdictMeaningVi": "Move on",
+      "imageAssetId": "ENDING04",
+      "imageSrc": "",
+      "rewardCoins": 35,
+      "normalRewardCoins": 20
+    }
+  },
+  "images": [],
+  "characters": [
+    {
+      "id": "F01",
+      "name": "Chloe",
+      "role": "Bride",
+      "type": "F",
+      "answerSet": true,
+      "x": 245,
+      "y": 780,
+      "namePool": "KEEP",
+      "appearance": [
+        "wedding dress",
+        "bridal veil"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Must read instantly as the bride. Starts happy, then reacts angrily when Ryan is placed.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "F01_BASE_L004",
+      "assetTrayId": "",
+      "reactionEvents": [
+        {
+          "id": "RE_F01_01",
+          "triggerType": "CHAR_PLACED",
+          "triggerChars": [
+            "M01"
+          ],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_F01_01",
+              "assetId": "F01_R01_L004",
+              "emotion": "😠",
+              "symbol": "💢",
+              "gaze": "AUTO",
+              "target": "M01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "name": "Ethan",
+      "role": "Groom",
+      "type": "F",
+      "answerSet": true,
+      "x": 835,
+      "y": 780,
+      "namePool": "KEEP",
+      "appearance": [
+        "groom suit",
+        "boutonniere"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Must read instantly as the groom. Reacts with confusion when Ryan is placed.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "F02_BASE_L004",
+      "assetTrayId": "",
+      "reactionEvents": [
+        {
+          "id": "RE_F02_01",
+          "triggerType": "CHAR_PLACED",
+          "triggerChars": [
+            "M01"
+          ],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_F02_01",
+              "assetId": "F02_R01_L004",
+              "emotion": "🤨",
+              "symbol": "?",
+              "gaze": "AUTO",
+              "target": "F01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "name": "Ryan",
+      "role": "Uninvited guest / Chloe's ex",
+      "type": "M",
+      "answerSet": true,
+      "x": 540,
+      "y": 780,
+      "namePool": "KEEP",
+      "appearance": [
+        "dark suit",
+        "confident smile"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Should look slightly too confident for an ordinary guest. Do not visually reveal that he is the ex before placement.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M01_BASE_L004",
+      "assetTrayId": "M01_TRAY_L004",
+      "reactionEvents": [
+        {
+          "id": "RE_M01_01",
+          "triggerType": "SELF_PLACED",
+          "triggerChars": [],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_M01_01",
+              "assetId": "M01_R01_L004",
+              "emotion": "😏",
+              "symbol": "",
+              "gaze": "AUTO",
+              "target": "F01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "name": "Ava",
+      "role": "Chloe's sister",
+      "type": "M",
+      "answerSet": true,
+      "x": 390,
+      "y": 780,
+      "namePool": "KEEP",
+      "appearance": [
+        "light blue formal dress",
+        "small bouquet"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Simple wedding guest look. No special reaction needed.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M02_BASE_L004",
+      "assetTrayId": "M02_TRAY_L004",
+      "reactionEvents": []
+    },
+    {
+      "id": "M03",
+      "name": "Liam",
+      "role": "Ethan's brother",
+      "type": "M",
+      "answerSet": true,
+      "x": 690,
+      "y": 780,
+      "namePool": "KEEP",
+      "appearance": [
+        "navy formal suit",
+        "family boutonniere"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Simple family-member wedding look. No special reaction needed.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M03_BASE_L004",
+      "assetTrayId": "M03_TRAY_L004",
+      "reactionEvents": []
+    },
+    {
+      "id": "M04",
+      "name": "Mia",
+      "role": "Maid of honor",
+      "type": "M",
+      "answerSet": true,
+      "x": 95,
+      "y": 780,
+      "namePool": "KEEP",
+      "appearance": [
+        "maid of honor dress",
+        "bouquet"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Readable wedding-party role but do not make her side of the lineup obvious through art alone.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M04_BASE_L004",
+      "assetTrayId": "M04_TRAY_L004",
+      "reactionEvents": []
+    },
+    {
+      "id": "M05",
+      "name": "Noah",
+      "role": "Best man",
+      "type": "M",
+      "answerSet": true,
+      "x": 985,
+      "y": 780,
+      "namePool": "KEEP",
+      "appearance": [
+        "best man suit",
+        "pocket square"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Readable wedding-party role but no placement should be solvable from appearance alone.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M05_BASE_L004",
+      "assetTrayId": "M05_TRAY_L004",
+      "reactionEvents": []
+    }
+  ],
+  "clues": [
+    {
+      "id": "CL01",
+      "parent": null,
+      "text": "{M02} is {F01}'s sister. Both {M02} and {M01} are standing between the couple, but {M02} is closer to {F01}",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M02",
+        "M01"
+      ],
+      "affects": [
+        "M02",
+        "M01"
+      ]
+    },
+    {
+      "id": "CL02",
+      "parent": null,
+      "text": "{M03} is {F02}'s brother. Both {M03} and {M01} are standing between the couple, but {M03} is closer to {F02}",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M03",
+        "M01"
+      ],
+      "affects": [
+        "M03",
+        "M01"
+      ]
+    },
+    {
+      "id": "CL03",
+      "parent": null,
+      "text": "{M04} and {M05} are standing at opposite ends of the photo",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M04",
+        "M05"
+      ],
+      "affects": [
+        "M04",
+        "M05"
+      ]
+    },
+    {
+      "id": "CL04",
+      "parent": null,
+      "text": "{M04} is standing on {F01}'s side of the photo",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M04"
+      ],
+      "affects": [
+        "M04",
+        "M05"
+      ]
+    }
+  ],
+  "sceneEvidence": [],
+  "annotations": [
+    {
+      "id": "AN_ARCH",
+      "type": "rect",
+      "x": 180,
+      "y": 300,
+      "w": 720,
+      "h": 360,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "WEDDING PHOTO AREA",
+      "textColor": "#514953",
+      "fontSize": 28,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 10,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_LEFT",
+      "type": "text",
+      "x": 20,
+      "y": 690,
+      "w": 110,
+      "h": 45,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "LEFT",
+      "textColor": "#514953",
+      "fontSize": 18,
+      "strokeWidth": 2,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 11,
+      "visibleInPlay": false
+    },
+    {
+      "id": "AN_RIGHT",
+      "type": "text",
+      "x": 950,
+      "y": 690,
+      "w": 110,
+      "h": 45,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "RIGHT",
+      "textColor": "#514953",
+      "fontSize": 18,
+      "strokeWidth": 2,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 12,
+      "visibleInPlay": false
+    }
+  ],
+  "editorSchemaVersion": "1.28"
+}

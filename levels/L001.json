@@ -1,0 +1,326 @@
+{
+  "level": {
+    "id": "L001",
+    "version": "1.1",
+    "name": "Double Date",
+    "objective": "",
+    "hook": "Someone came on a double date with a new partner... but keeps looking at the ex",
+    "difficultyTarget": "EASY",
+    "difficultySelf": "",
+    "difficultyAmbiguity": "",
+    "difficultyCombine": "",
+    "difficultyTested": false,
+    "reveal": "{M01} came with {F01}... but he is still into {F02}",
+    "revealWhen": [
+      "M01"
+    ],
+    "revealParentClueId": "",
+    "truth": "Ethan is dating Chloe. Ryan is dating Mia. Ethan and Mia are exes. Ethan still has feelings for Mia. Chloe notices it immediately. Mia is already tired of Ethan's nonsense. Noah is the cafe waiter.",
+    "playNameMode": "KEEP",
+    "art": {
+      "backgroundAssetId": "BG01",
+      "backgroundDescription": "A simple modern cafe with two small date tables side by side and a service counter in the lower-right area. Keep the layout clean and easy to read.",
+      "tone": "Warm casual cafe, light romantic comedy",
+      "artistNote": "Keep both date tables, the counter, and all five character positions clearly readable. Leave a clean sightline from Ethan toward Mia so the gaze reaction reads immediately.",
+      "referenceNote": "Use the greybox layout in the editor as the seating plan.",
+      "sceneItems": []
+    },
+    "ending": {
+      "imageBrief": "At a casual double date in a cafe, Ethan sits opposite Chloe but is obviously looking toward Mia at the other table. Chloe glares at Ethan, Mia looks tired and unimpressed, Ryan is still relaxed, and Noah the waiter keeps working behind the counter.",
+      "endingLine": "Double date, wrong server",
+      "verdictCta": "MOVE ON",
+      "verdictMeaningVi": "Move on",
+      "imageAssetId": "ENDING01",
+      "imageSrc": "",
+      "rewardCoins": 30,
+      "normalRewardCoins": 15
+    }
+  },
+  "images": [],
+  "characters": [
+    {
+      "id": "F01",
+      "name": "Chloe",
+      "role": "Ethan's current date",
+      "type": "F",
+      "answerSet": true,
+      "x": 260,
+      "y": 420,
+      "namePool": "KEEP",
+      "appearance": [
+        "casual date outfit",
+        "neat shoulder-length hair"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Friendly neutral base face. Reaction should read as a clear annoyed glare toward Ethan.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "F01_BASE",
+      "assetTrayId": "",
+      "reactionEvents": [
+        {
+          "id": "RE_F01_01",
+          "triggerType": "CHAR_PLACED",
+          "triggerChars": [
+            "M01"
+          ],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_F01_01",
+              "assetId": "F01_R01",
+              "emotion": "😒",
+              "symbol": "💢",
+              "gaze": "AUTO",
+              "target": "M01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "name": "Mia",
+      "role": "Ryan's date / Ethan's ex",
+      "type": "F",
+      "answerSet": true,
+      "x": 700,
+      "y": 420,
+      "namePool": "KEEP",
+      "appearance": [
+        "casual date outfit",
+        "confident look"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Neutral at START. Reaction should feel tired and unimpressed when Ethan looks at her.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "F02_BASE",
+      "assetTrayId": "",
+      "reactionEvents": [
+        {
+          "id": "RE_F02_01",
+          "triggerType": "CHAR_PLACED",
+          "triggerChars": [
+            "M01"
+          ],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_F02_01",
+              "assetId": "F02_R01",
+              "emotion": "🙄",
+              "symbol": "",
+              "gaze": "AUTO",
+              "target": "M01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "name": "Ethan",
+      "role": "Chloe's date / Mia's ex",
+      "type": "M",
+      "answerSet": true,
+      "x": 260,
+      "y": 820,
+      "namePool": "KEEP",
+      "appearance": [
+        "casual date outfit",
+        "slightly overconfident look"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Neutral in tray. Correct placement reaction should clearly show him looking toward Mia.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M01_BASE",
+      "assetTrayId": "M01_TRAY",
+      "reactionEvents": [
+        {
+          "id": "RE_M01_01",
+          "triggerType": "SELF_PLACED",
+          "triggerChars": [],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_M01_01",
+              "assetId": "M01_R01",
+              "emotion": "😍",
+              "symbol": "❤️",
+              "gaze": "AUTO",
+              "target": "F02",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "name": "Ryan",
+      "role": "Mia's date",
+      "type": "M",
+      "answerSet": true,
+      "x": 700,
+      "y": 820,
+      "namePool": "KEEP",
+      "appearance": [
+        "casual date outfit",
+        "friendly expression"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Keep him relaxed and completely unaware of the drama.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [
+        "M01",
+        "M03"
+      ],
+      "solveByElimination": true,
+      "assetBaseId": "M02_BASE",
+      "assetTrayId": "M02_TRAY",
+      "reactionEvents": []
+    },
+    {
+      "id": "M03",
+      "name": "Noah",
+      "role": "Cafe waiter",
+      "type": "M",
+      "answerSet": true,
+      "x": 850,
+      "y": 1215,
+      "namePool": "KEEP",
+      "appearance": [
+        "cafe apron",
+        "simple waiter uniform"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "The apron must be obvious at gameplay scale. Keep his design simple and readable.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M03_BASE",
+      "assetTrayId": "M03_TRAY",
+      "reactionEvents": []
+    }
+  ],
+  "clues": [
+    {
+      "id": "CL01",
+      "parent": null,
+      "text": "{F01} made sure {M01} sat right across from her tonight",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M01"
+      ],
+      "affects": [
+        "M01"
+      ]
+    },
+    {
+      "id": "CL02",
+      "parent": null,
+      "text": "The guy in the apron is working behind the counter",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M03"
+      ],
+      "affects": [
+        "M03"
+      ]
+    }
+  ],
+  "sceneEvidence": [],
+  "annotations": [
+    {
+      "id": "AN_TABLE_01",
+      "type": "rect",
+      "x": 150,
+      "y": 535,
+      "w": 220,
+      "h": 150,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "TABLE 1",
+      "textColor": "#514953",
+      "fontSize": 24,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 10,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_TABLE_02",
+      "type": "rect",
+      "x": 590,
+      "y": 535,
+      "w": 220,
+      "h": 150,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "TABLE 2",
+      "textColor": "#514953",
+      "fontSize": 24,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 11,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_COUNTER",
+      "type": "rect",
+      "x": 690,
+      "y": 1080,
+      "w": 300,
+      "h": 180,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "CAFE COUNTER",
+      "textColor": "#514953",
+      "fontSize": 22,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 12,
+      "visibleInPlay": true
+    }
+  ],
+  "editorSchemaVersion": "1.28"
+}

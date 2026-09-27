@@ -1,0 +1,509 @@
+{
+  "level": {
+    "id": "L009",
+    "version": "1.2",
+    "name": "Homemade, Apparently",
+    "objective": "",
+    "hook": "One guest won't stop bragging about a \"homemade\" dish. Something about it doesn't add up",
+    "difficultyTarget": "MEDIUM",
+    "difficultySelf": "",
+    "difficultyAmbiguity": "",
+    "difficultyCombine": "",
+    "difficultyTested": false,
+    "reveal": "{M01}'s \"homemade\" casserole was delivered from a restaurant",
+    "revealWhen": [
+      "M01"
+    ],
+    "revealParentClueId": "CL03",
+    "truth": "This is a small apartment potluck. Maya is the host behind the buffet, Ben is the roommate near the kitchen, and Chloe is fixed near the sofa. Emma brought the salad bowl and stayed closest to the kitchen. Liam brought drinks and stayed closest to the balcony door. Noah, Zoe, and Ryan occupy the three central guest chairs from left to right: Noah, Zoe, Ryan. Zoe brought the cake box. Ryan brought the covered casserole and keeps bragging that he cooked it himself. From START, the player knows the guest with the covered casserole sat immediately to the right of the guest with the cake box. That relation alone leaves two valid arrangements in the three-chair cluster: Zoe-Ryan-Noah or Noah-Zoe-Ryan. After Emma is placed, she reveals that Noah was sitting on the kitchen side of the guest with the covered casserole. The player must combine this new information with the existing cake/casserole relation: Zoe-Ryan-Noah becomes impossible because Noah would be on the opposite side from the kitchen relative to Ryan, leaving Noah-Zoe-Ryan as the only valid arrangement. The three central characters are then all logically solvable in any order. When Ryan is placed, a restaurant delivery sticker or receipt becomes visible on/under the casserole and exposes that the dish was delivered, not homemade.",
+    "playNameMode": "KEEP",
+    "art": {
+      "backgroundAssetId": "BG09",
+      "backgroundDescription": "Apartment potluck / common-room scene using a flat 2D game-board layout. Shallow back strip only. Kitchen landmark on the upper-left, buffet table upper-center, sofa upper-right, balcony door lower-left. The gameplay focus is a clearly readable three-chair cluster in the center-lower area.",
+      "tone": "Warm apartment potluck comedy; relatable, petty, modern social drama",
+      "artistNote": "Keep the scene simple and readable. The three central chairs must clearly read as LEFT / MIDDLE / RIGHT, and the kitchen must clearly sit to the LEFT of this cluster so 'closer to the kitchen' is unambiguous. Do NOT visually imply which central chair belongs to the cake box before the progressive clue opens. Props are gameplay information and must be readable at gameplay scale: Emma = salad bowl, Zoe = cake box, Ryan = covered casserole, Liam = drinks. Ryan must NOT show any restaurant logo, receipt, delivery sticker, or delivery bag in tray/base state. In Ryan's correct-placement reaction, reveal a clear restaurant delivery sticker or receipt attached under/to the casserole as visual proof. Maya may react with an unimpressed/annoyed look toward Ryan after he is placed. Reuse apartment, kitchen, sofa, table, chair, food and drink assets where possible.",
+      "referenceNote": "Use the greybox landmarks and positions in this editor JSON as the truth layout. The generated potluck sketch from the design discussion is only a visual reference, not final art.",
+      "sceneItems": []
+    },
+    "ending": {
+      "imageBrief": "Apartment potluck after Ryan is exposed. Ryan sits to Zoe's right with the casserole in front of him. A restaurant delivery sticker or receipt is clearly visible on/under the dish. Maya looks unimpressed toward Ryan. Zoe notices the proof. Keep the buffet, central three-chair cluster, and food props readable.",
+      "endingLine": "Secret ingredient: delivery fees",
+      "verdictCta": "MOVE ON",
+      "verdictMeaningVi": "Move on",
+      "imageAssetId": "ENDING09",
+      "imageSrc": "",
+      "rewardCoins": 40,
+      "normalRewardCoins": 20
+    }
+  },
+  "images": [],
+  "characters": [
+    {
+      "id": "F01",
+      "name": "Maya",
+      "role": "Host",
+      "type": "F",
+      "answerSet": true,
+      "x": 540,
+      "y": 300,
+      "namePool": "FEMALE",
+      "appearance": [
+        "host outfit",
+        "serving apron"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Fixed behind the buffet. Reacts unimpressed toward Ryan when his fake homemade dish is exposed.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "F01_BASE_L009",
+      "assetTrayId": "",
+      "reactionEvents": [
+        {
+          "id": "RE_F01_01",
+          "triggerType": "CHAR_PLACED",
+          "triggerChars": [
+            "M01"
+          ],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_F01_01",
+              "assetId": "F01_R01_L009",
+              "emotion": "😑",
+              "symbol": "",
+              "gaze": "AUTO",
+              "target": "M01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "name": "Ben",
+      "role": "Roommate",
+      "type": "F",
+      "answerSet": true,
+      "x": 175,
+      "y": 310,
+      "namePool": "MALE",
+      "appearance": [
+        "casual home outfit",
+        "kitchen towel"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Fixed near the kitchen. Clear roommate / home-party silhouette.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "F02_BASE_L009",
+      "assetTrayId": "",
+      "reactionEvents": []
+    },
+    {
+      "id": "F03",
+      "name": "Chloe",
+      "role": "Guest near sofa",
+      "type": "F",
+      "answerSet": true,
+      "x": 885,
+      "y": 330,
+      "namePool": "FEMALE",
+      "appearance": [
+        "casual party outfit",
+        "paper plate"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Fixed near the sofa. Context character; no gameplay reaction required.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "F03_BASE_L009",
+      "assetTrayId": "",
+      "reactionEvents": []
+    },
+    {
+      "id": "M01",
+      "name": "Ryan",
+      "role": "Guest bragging about his homemade casserole",
+      "type": "M",
+      "answerSet": true,
+      "x": 730,
+      "y": 955,
+      "namePool": "MALE",
+      "appearance": [
+        "covered casserole tray",
+        "casual party outfit"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Do NOT show any restaurant branding, delivery receipt, delivery sticker or delivery bag in tray/base. In M01_R01, Ryan becomes nervous/sweaty and the casserole reveals a clear restaurant delivery sticker or receipt as visual proof.",
+      "baseExpression": "😌",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [
+        "M02"
+      ],
+      "solveByElimination": false,
+      "assetBaseId": "M01_BASE_L009",
+      "assetTrayId": "M01_TRAY_L009",
+      "reactionEvents": [
+        {
+          "id": "RE_M01_01",
+          "triggerType": "SELF_PLACED",
+          "triggerChars": [],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_M01_01",
+              "assetId": "M01_R01_L009",
+              "emotion": "😰",
+              "symbol": "💦",
+              "gaze": "AUTO",
+              "target": "F01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "name": "Emma",
+      "role": "Guest with salad",
+      "type": "M",
+      "answerSet": true,
+      "x": 185,
+      "y": 675,
+      "namePool": "FEMALE",
+      "appearance": [
+        "large salad bowl",
+        "serving tongs"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Salad bowl must be immediately readable in tray and scene.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M02_BASE_L009",
+      "assetTrayId": "M02_TRAY_L009",
+      "reactionEvents": []
+    },
+    {
+      "id": "M03",
+      "name": "Noah",
+      "role": "Potluck guest",
+      "type": "M",
+      "answerSet": true,
+      "x": 350,
+      "y": 955,
+      "namePool": "MALE",
+      "appearance": [
+        "casual party outfit",
+        "phone or cup"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Simple readable guest. No unique gameplay prop needed.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [
+        "M02"
+      ],
+      "solveByElimination": false,
+      "assetBaseId": "M03_BASE_L009",
+      "assetTrayId": "M03_TRAY_L009",
+      "reactionEvents": []
+    },
+    {
+      "id": "M04",
+      "name": "Zoe",
+      "role": "Guest with cake",
+      "type": "M",
+      "answerSet": true,
+      "x": 540,
+      "y": 955,
+      "namePool": "FEMALE",
+      "appearance": [
+        "cake box with ribbon",
+        "casual party outfit"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Cake box must be clearly readable and visually distinct from Ryan's casserole tray.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [
+        "M02"
+      ],
+      "solveByElimination": false,
+      "assetBaseId": "M04_BASE_L009",
+      "assetTrayId": "M04_TRAY_L009",
+      "reactionEvents": []
+    },
+    {
+      "id": "M05",
+      "name": "Liam",
+      "role": "Guest with drinks",
+      "type": "M",
+      "answerSet": true,
+      "x": 150,
+      "y": 1320,
+      "namePool": "MALE",
+      "appearance": [
+        "drink pack",
+        "bottles"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Drink pack / bottles must be readable in tray and scene.",
+      "baseExpression": "😄",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M05_BASE_L009",
+      "assetTrayId": "M05_TRAY_L009",
+      "reactionEvents": []
+    }
+  ],
+  "clues": [
+    {
+      "id": "CL01",
+      "parent": null,
+      "text": "The guest carrying the salad bowl stayed closest to the kitchen counter",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M02"
+      ],
+      "affects": [
+        "M02"
+      ]
+    },
+    {
+      "id": "CL01.1",
+      "parent": "CL01",
+      "text": "{M02} remembers {M03} was sitting on the kitchen side of the guest with the covered casserole",
+      "preOpen": "LOCKED",
+      "resolveWhen": [
+        "M03",
+        "M04",
+        "M01"
+      ],
+      "affects": [
+        "M03",
+        "M04",
+        "M01"
+      ]
+    },
+    {
+      "id": "CL02",
+      "parent": null,
+      "text": "The guest carrying drinks stayed closest to the balcony door",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M05"
+      ],
+      "affects": [
+        "M05"
+      ]
+    },
+    {
+      "id": "CL03",
+      "parent": null,
+      "text": "The guest with the covered casserole sat immediately to the right of the guest with the cake box",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M01"
+      ],
+      "affects": [
+        "M04",
+        "M01"
+      ]
+    }
+  ],
+  "sceneEvidence": [],
+  "annotations": [
+    {
+      "id": "AN_KITCHEN",
+      "type": "rect",
+      "x": 40,
+      "y": 90,
+      "w": 280,
+      "h": 360,
+      "fill": "#e8e3de",
+      "stroke": "#655d69",
+      "text": "KITCHEN\nCOUNTER",
+      "textColor": "#514953",
+      "fontSize": 28,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 10,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_BUFFET",
+      "type": "rect",
+      "x": 340,
+      "y": 120,
+      "w": 400,
+      "h": 310,
+      "fill": "#f6e3d5",
+      "stroke": "#655d69",
+      "text": "BUFFET TABLE",
+      "textColor": "#514953",
+      "fontSize": 28,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 11,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_SOFA",
+      "type": "rect",
+      "x": 780,
+      "y": 100,
+      "w": 250,
+      "h": 370,
+      "fill": "#e1eadc",
+      "stroke": "#655d69",
+      "text": "SOFA",
+      "textColor": "#514953",
+      "fontSize": 28,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 12,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_CHAIR_L",
+      "type": "rect",
+      "x": 285,
+      "y": 845,
+      "w": 130,
+      "h": 225,
+      "fill": "#ead9c5",
+      "stroke": "#8a715a",
+      "text": "",
+      "textColor": "#514953",
+      "fontSize": 24,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 13,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_CHAIR_C",
+      "type": "rect",
+      "x": 475,
+      "y": 845,
+      "w": 130,
+      "h": 225,
+      "fill": "#ead9c5",
+      "stroke": "#8a715a",
+      "text": "",
+      "textColor": "#514953",
+      "fontSize": 24,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 14,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_CHAIR_R",
+      "type": "rect",
+      "x": 665,
+      "y": 845,
+      "w": 130,
+      "h": 225,
+      "fill": "#ead9c5",
+      "stroke": "#8a715a",
+      "text": "",
+      "textColor": "#514953",
+      "fontSize": 24,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 15,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_CORE",
+      "type": "rect",
+      "x": 250,
+      "y": 805,
+      "w": 580,
+      "h": 320,
+      "fill": "#f4f1f6",
+      "stroke": "#c98a9f",
+      "text": "3-SEAT POTLUCK AREA",
+      "textColor": "#9f536c",
+      "fontSize": 24,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 9,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_BALCONY",
+      "type": "rect",
+      "x": 35,
+      "y": 1160,
+      "w": 285,
+      "h": 360,
+      "fill": "#dbeaf3",
+      "stroke": "#655d69",
+      "text": "BALCONY\nDOOR",
+      "textColor": "#514953",
+      "fontSize": 28,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 16,
+      "visibleInPlay": true
+    }
+  ],
+  "editorSchemaVersion": "1.28"
+}

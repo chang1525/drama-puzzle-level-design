@@ -1,0 +1,453 @@
+{
+  "level": {
+    "id": "L006",
+    "version": "1.2",
+    "name": "Group Project Hero",
+    "objective": "",
+    "hook": "Someone did almost none of the group project... but still took all the spotlight",
+    "difficultyTarget": "EASY",
+    "difficultySelf": "",
+    "difficultyAmbiguity": "",
+    "difficultyCombine": "",
+    "difficultyTested": false,
+    "reveal": "{M01} brought none of the work — but took the podium like he did everything",
+    "revealWhen": [
+      "M01"
+    ],
+    "revealParentClueId": "",
+    "truth": "This is a university group-project presentation. Professor Reed is supervising. Olivia handles the presentation remote near the projector. Lucas handles the printed charts near the whiteboard. Nina works from the laptop table. Kai arrived late and carries the survey folder near the door. Ben brought none of the group's work materials but stands proudly at the podium and takes the spotlight.",
+    "playNameMode": "KEEP",
+    "art": {
+      "backgroundAssetId": "BG06",
+      "backgroundDescription": "A university presentation room with an organic layout. Key landmarks: projector screen at the top, whiteboard on the upper-left, professor area on the upper-right, laptop/work table near center, door on the lower-left, and podium on the lower-right.",
+      "tone": "Modern university comedy, relatable and slightly ridiculous",
+      "artistNote": "Keep the projector, whiteboard, laptop table, door, and podium easy to read. Do not arrange the five movable positions into a perfect grid. Olivia's remote, Lucas's printed charts, Nina's laptop, and Kai's survey folder/backpack must read clearly at gameplay scale. Ben should have no meaningful work prop. The projector should only show a generic GROUP PROJECT PRESENTATION title so the drama is not spoiled before Ben is placed.",
+      "referenceNote": "Use the greybox landmarks and positions as the truth scene.",
+      "sceneItems": []
+    },
+    "ending": {
+      "imageBrief": "A university group presentation. Ben stands proudly at the podium as if he did everything. Olivia holds the presentation remote, Lucas has printed charts, Nina has the laptop, and Kai has the survey folder. The others look annoyed while Professor Reed looks suspicious. The joke is that Ben brought none of the work.",
+      "endingLine": "Contribution: 0%. Confidence: 100%",
+      "verdictCta": "MOVE ON",
+      "verdictMeaningVi": "Move on",
+      "imageAssetId": "ENDING06",
+      "imageSrc": "",
+      "rewardCoins": 30,
+      "normalRewardCoins": 15
+    }
+  },
+  "images": [],
+  "characters": [
+    {
+      "id": "F01",
+      "name": "Professor Reed",
+      "role": "Professor",
+      "type": "F",
+      "answerSet": true,
+      "x": 830,
+      "y": 450,
+      "namePool": "KEEP",
+      "appearance": [
+        "professor outfit",
+        "glasses"
+      ],
+      "gender": "MALE",
+      "age": "adult",
+      "artistNote": "Clear professor silhouette. Reacts suspiciously when Ben is placed at the podium.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "F01_BASE_L006",
+      "assetTrayId": "",
+      "reactionEvents": [
+        {
+          "id": "RE_F01_01",
+          "triggerType": "CHAR_PLACED",
+          "triggerChars": [
+            "M01"
+          ],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_F01_01",
+              "assetId": "F01_R01_L006",
+              "emotion": "🤨",
+              "symbol": "?",
+              "gaze": "AUTO",
+              "target": "M01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M01",
+      "name": "Ben",
+      "role": "Self-proclaimed group leader",
+      "type": "M",
+      "answerSet": true,
+      "x": 790,
+      "y": 1090,
+      "namePool": "KEEP",
+      "appearance": [
+        "clean presentation outfit",
+        "no work materials"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "No meaningful work prop. Correct placement reaction should look overly proud and confident.",
+      "baseExpression": "😐",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M01_BASE_L006",
+      "assetTrayId": "M01_TRAY_L006",
+      "reactionEvents": [
+        {
+          "id": "RE_M01_01",
+          "triggerType": "SELF_PLACED",
+          "triggerChars": [],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_M01_01",
+              "assetId": "M01_R01_L006",
+              "emotion": "😎",
+              "symbol": "✨",
+              "gaze": "NONE",
+              "target": "",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "name": "Olivia",
+      "role": "Presentation controller",
+      "type": "M",
+      "answerSet": true,
+      "x": 540,
+      "y": 330,
+      "namePool": "KEEP",
+      "appearance": [
+        "presentation remote",
+        "smart casual outfit"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Presentation remote must be obvious.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M02_BASE_L006",
+      "assetTrayId": "M02_TRAY_L006",
+      "reactionEvents": [
+        {
+          "id": "RE_M02_01",
+          "triggerType": "CHAR_PLACED",
+          "triggerChars": [
+            "M01"
+          ],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_M02_01",
+              "assetId": "M02_R01_L006",
+              "emotion": "😑",
+              "symbol": "",
+              "gaze": "AUTO",
+              "target": "M01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "name": "Lucas",
+      "role": "Printed-chart presenter",
+      "type": "M",
+      "answerSet": true,
+      "x": 245,
+      "y": 570,
+      "namePool": "KEEP",
+      "appearance": [
+        "printed charts",
+        "casual university outfit"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Printed charts must be obvious.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M03_BASE_L006",
+      "assetTrayId": "M03_TRAY_L006",
+      "reactionEvents": []
+    },
+    {
+      "id": "M04",
+      "name": "Nina",
+      "role": "Laptop / slide operator",
+      "type": "M",
+      "answerSet": true,
+      "x": 520,
+      "y": 790,
+      "namePool": "KEEP",
+      "appearance": [
+        "laptop",
+        "hoodie"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Laptop must be obvious. Reaction after Ben is placed should look exhausted/annoyed.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M04_BASE_L006",
+      "assetTrayId": "M04_TRAY_L006",
+      "reactionEvents": [
+        {
+          "id": "RE_M04_01",
+          "triggerType": "CHAR_PLACED",
+          "triggerChars": [
+            "M01"
+          ],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_M04_01",
+              "assetId": "M04_R01_L006",
+              "emotion": "😮‍💨",
+              "symbol": "",
+              "gaze": "AUTO",
+              "target": "M01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "name": "Kai",
+      "role": "Late student / survey data",
+      "type": "M",
+      "answerSet": true,
+      "x": 145,
+      "y": 1050,
+      "namePool": "KEEP",
+      "appearance": [
+        "backpack",
+        "survey folder"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Backpack and survey folder should read clearly. He is the easy opening for this relief level.",
+      "baseExpression": "😅",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M05_BASE_L006",
+      "assetTrayId": "M05_TRAY_L006",
+      "reactionEvents": []
+    }
+  ],
+  "clues": [
+    {
+      "id": "CL01",
+      "parent": null,
+      "text": "The late student with the survey folder stayed closest to the door",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M05"
+      ],
+      "affects": [
+        "M05"
+      ]
+    },
+    {
+      "id": "CL02",
+      "parent": null,
+      "text": "The student holding the presentation remote and the student carrying the printed charts stayed around the presentation area",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M02",
+        "M03"
+      ],
+      "affects": [
+        "M02",
+        "M03"
+      ]
+    },
+    {
+      "id": "CL03",
+      "parent": null,
+      "text": "The printed charts were kept closer to the whiteboard than the projector",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M02",
+        "M03"
+      ],
+      "affects": [
+        "M02",
+        "M03"
+      ]
+    },
+    {
+      "id": "CL04",
+      "parent": null,
+      "text": "{M01} and the student with the laptop took the two spots by the work table and the podium",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M01",
+        "M04"
+      ],
+      "affects": [
+        "M01",
+        "M04"
+      ]
+    },
+    {
+      "id": "CL05",
+      "parent": null,
+      "text": "The student with the laptop stood closer to the work table than {M01}",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M01",
+        "M04"
+      ],
+      "affects": [
+        "M01",
+        "M04"
+      ]
+    }
+  ],
+  "sceneEvidence": [],
+  "annotations": [
+    {
+      "id": "AN_PROJECTOR",
+      "type": "rect",
+      "x": 370,
+      "y": 90,
+      "w": 380,
+      "h": 160,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "GROUP PROJECT\nPRESENTATION",
+      "textColor": "#514953",
+      "fontSize": 18,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 10,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_WHITEBOARD",
+      "type": "rect",
+      "x": 40,
+      "y": 330,
+      "w": 240,
+      "h": 170,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "WHITEBOARD",
+      "textColor": "#514953",
+      "fontSize": 20,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 11,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_WORK_TABLE",
+      "type": "rect",
+      "x": 390,
+      "y": 700,
+      "w": 280,
+      "h": 150,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "LAPTOP TABLE",
+      "textColor": "#514953",
+      "fontSize": 19,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 12,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_DOOR",
+      "type": "rect",
+      "x": 20,
+      "y": 900,
+      "w": 140,
+      "h": 250,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "DOOR",
+      "textColor": "#514953",
+      "fontSize": 22,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 13,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_PODIUM",
+      "type": "rect",
+      "x": 710,
+      "y": 980,
+      "w": 180,
+      "h": 180,
+      "fill": "#f4f1f6",
+      "stroke": "#655d69",
+      "text": "PODIUM",
+      "textColor": "#514953",
+      "fontSize": 20,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 14,
+      "visibleInPlay": true
+    }
+  ],
+  "editorSchemaVersion": "1.28"
+}

@@ -1,0 +1,850 @@
+{
+  "level": {
+    "id": "L010",
+    "version": "1.4",
+    "name": "Private Party, Public Stream",
+    "objective": "",
+    "hook": "The birthday girl made one rule: no livestreams. Someone ignored it",
+    "difficultyTarget": "HARD",
+    "difficultySelf": "",
+    "difficultyAmbiguity": "",
+    "difficultyCombine": "",
+    "difficultyTested": false,
+    "reveal": "{M01} has been secretly livestreaming the whole party",
+    "revealWhen": [
+      "M01"
+    ],
+    "revealParentClueId": "CL08.1",
+    "truth": "At a private birthday karaoke party, Mia stands behind the birthday table and Ben runs the DJ area. Nine movable guests occupy one continuous evenly spaced left-to-right seating row. The Photo Booth is on the far left and the main Speaker is on the far right. The true order is Liam, Emma, Zoe, Lucas, Ryan, Ava, Noah, Nina, Mason. The row is structured as three Photo Booth-side seats, three center seats, and three Speaker-side seats. On the left, Liam, Emma and Zoe occupy the three Photo Booth-side seats. Emma wears silver boots and is already visibly annoyed in her initial state; Zoe carries a gift bag. The guest with the gift bag sits to the right of the guest in silver boots, while Liam sits closer to the Photo Booth than the guest who already looks annoyed. Combining those facts forces Liam-Emma-Zoe. In the center, Lucas, Ryan and Ava occupy the three seats directly in front of Mia. From START, the player also knows Ava sat somewhere to the right of Lucas. That relation alone leaves three valid center arrangements and therefore three possible positions for Ryan. On the Speaker side, Noah, Nina and Mason occupy the final three seats. Mason wears a white hoodie and takes the seat closest to the Speaker. Before Mason reacts, Noah and Nina can still swap. When Mason is correctly placed, the loud music annoys him and he clearly turns/points toward Nina's true adjacent slot, fixing Nina; Noah is then the remaining Speaker-side seat and becomes the right anchor. Only after all six side-branch guests are correctly placed does the final information open. Zoe and Noah agree that there were the same number of seats between Zoe and Ryan as between Ryan and Noah. This forces Ryan into the middle center seat. The old START information that Ava sat to the right of Lucas then fixes the rest of the center at once: Lucas-Ryan-Ava. When Ryan is placed, he panics and a phone screen showing LIVE with 2.4K viewers becomes visible, proving that he secretly livestreamed the party despite Mia's rule.",
+    "playNameMode": "KEEP",
+    "art": {
+      "backgroundAssetId": "BG10",
+      "backgroundDescription": "Flat 2D private birthday karaoke lounge. One shallow back wall strip only. Far-left landmark: PHOTO BOOTH. Upper-center: birthday cake/table with Mia fixed behind it. Upper-right: DJ console with Ben and a large SPEAKER. Across the playable floor is one continuous row of nine evenly spaced guest seats arranged in a SHALLOW ARC: the two outer ends sit slightly higher and the center sits slightly lower. The arc is visual only; left-to-right seat order and equal logical spacing must remain unmistakable. No realistic room perspective or side walls.",
+      "tone": "Colorful private birthday party with playful social drama; lively but clean enough for logic readability",
+      "artistNote": "Gameplay readability is more important than decoration. The nine seats must form one SHALLOW, SYMMETRICAL ARC, not a straight line and not a deep semicircle. Keep X spacing even and preserve the exact left-to-right order 3 LEFT + 3 CENTER + 3 RIGHT. The center seat is only slightly lower than the outer seats, so the row still reads like one continuous logical sequence. Photo Booth must be unmistakably on the far left; Speaker unmistakably on the far right. The THREE center seats sit directly in front of Mia. Props/appearance used as evidence must be clear at mobile size: Emma = silver boots, Zoe = gift bag, Ava = red cup, Noah = varsity jacket, Mason = white hoodie, Nina = volume remote. Emma's annoyed initial expression must be visible in Tray and scene. Mason's correct-placement reaction is GAMEPLAY evidence: his body/arm must clearly turn or point toward Nina's adjacent truth slot; do not rely on a tiny eye shift. Ryan must look ordinary before placement: no visible phone, LIVE icon, ring light, tripod or suspicious expression. In Ryan's reaction asset, reveal a phone screen with a clear generic red LIVE indicator and '2.4K' viewers. Do not use a real social-media brand. The final midpoint deduction is based on seat COUNT/order, not pixel distance; the shallow arc must never make the logical sequence ambiguous.",
+      "referenceNote": "Greybox truth order: M02-M03-M04 | M09-M01-M06 | M05-M08-M07. Use the authored shallow-arc coordinates from v1.4. Preserve equal X spacing and the 3–3–3 order.",
+      "sceneItems": []
+    },
+    "ending": {
+      "imageBrief": "Birthday karaoke party after the reveal. Ryan is in the MIDDLE of the three center seats with a phone clearly showing a generic red LIVE indicator and 2.4K viewers. Lucas is on his left and Ava with the red cup is on his right. Mia behind the birthday table looks furious at Ryan. Mason near the Speaker is still irritated. Keep Photo Booth, Speaker, and the solved 3–3–3 seating row readable.",
+      "endingLine": "No livestreams. 2.4K viewers.",
+      "verdictCta": "MOVE ON",
+      "verdictMeaningVi": "Move on",
+      "imageAssetId": "ENDING10",
+      "imageSrc": "",
+      "rewardCoins": 40,
+      "normalRewardCoins": 20
+    }
+  },
+  "images": [],
+  "characters": [
+    {
+      "id": "F01",
+      "name": "Mia",
+      "role": "Birthday girl",
+      "type": "F",
+      "answerSet": true,
+      "x": 540,
+      "y": 355,
+      "namePool": "FEMALE",
+      "appearance": [
+        "birthday outfit",
+        "birthday sash"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Fixed behind the birthday table. Must read immediately as the birthday girl. Payoff reaction targets Ryan.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "F01_BASE_L010",
+      "assetTrayId": "",
+      "reactionEvents": [
+        {
+          "id": "RE_F01_01",
+          "triggerType": "CHAR_PLACED",
+          "triggerChars": [
+            "M01"
+          ],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_F01_01",
+              "assetId": "F01_R01_L010",
+              "emotion": "😡",
+              "symbol": "!",
+              "gaze": "AUTO",
+              "target": "M01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "name": "Ben",
+      "role": "DJ / MC",
+      "type": "F",
+      "answerSet": true,
+      "x": 835,
+      "y": 360,
+      "namePool": "MALE",
+      "appearance": [
+        "DJ headset",
+        "party MC outfit"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Fixed at the DJ console. Context anchor only; no extra reaction asset required.",
+      "baseExpression": "😎",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "F02_BASE_L010",
+      "assetTrayId": "",
+      "reactionEvents": []
+    },
+    {
+      "id": "M01",
+      "name": "Ryan",
+      "role": "Center guest; secret livestreamer in Truth",
+      "type": "M",
+      "answerSet": true,
+      "x": 540,
+      "y": 916,
+      "namePool": "MALE",
+      "appearance": [
+        "casual party outfit",
+        "no visible phone before reveal"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Before reveal, Ryan must be no more suspicious than Lucas. Do NOT show phone, LIVE icon, ring light or streaming gear. In M01_R01_L010, reveal a phone screen reading generic LIVE + 2.4K and make Ryan visibly panic.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M07",
+        "M08"
+      ],
+      "solveByElimination": false,
+      "assetBaseId": "M01_BASE_L010",
+      "assetTrayId": "M01_TRAY_L010",
+      "reactionEvents": [
+        {
+          "id": "RE_M01_01",
+          "triggerType": "SELF_PLACED",
+          "triggerChars": [],
+          "role": "Payoff",
+          "affects": [],
+          "steps": [
+            {
+              "id": "ST_M01_01",
+              "assetId": "M01_R01_L010",
+              "emotion": "😰",
+              "symbol": "📱",
+              "gaze": "AUTO",
+              "target": "F01",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "name": "Liam",
+      "role": "Photo Booth-side guest",
+      "type": "M",
+      "answerSet": true,
+      "x": 120,
+      "y": 882,
+      "namePool": "MALE",
+      "appearance": [
+        "denim overshirt",
+        "casual party outfit"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Keep silhouette simple; Liam is identified mainly by token/group logic, not a special prop.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M02_BASE_L010",
+      "assetTrayId": "M02_TRAY_L010",
+      "reactionEvents": []
+    },
+    {
+      "id": "M03",
+      "name": "Emma",
+      "role": "Photo Booth-side guest",
+      "type": "M",
+      "answerSet": true,
+      "x": 225,
+      "y": 894,
+      "namePool": "FEMALE",
+      "appearance": [
+        "silver boots",
+        "party outfit"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Silver boots must be readable. Initial annoyed expression is GAMEPLAY information and must remain visible in Tray/base state; no later reaction is needed for the solve.",
+      "baseExpression": "😒",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [
+        "M02",
+        "M04"
+      ],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M03_BASE_L010",
+      "assetTrayId": "M03_TRAY_L010",
+      "reactionEvents": []
+    },
+    {
+      "id": "M04",
+      "name": "Zoe",
+      "role": "Photo Booth-side guest",
+      "type": "M",
+      "answerSet": true,
+      "x": 330,
+      "y": 904,
+      "namePool": "FEMALE",
+      "appearance": [
+        "gift bag",
+        "party outfit"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Gift bag must be clearly distinct from cups/phones and readable in Tray.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M04_BASE_L010",
+      "assetTrayId": "M04_TRAY_L010",
+      "reactionEvents": []
+    },
+    {
+      "id": "M05",
+      "name": "Noah",
+      "role": "Speaker-side anchor guest",
+      "type": "M",
+      "answerSet": true,
+      "x": 750,
+      "y": 904,
+      "namePool": "MALE",
+      "appearance": [
+        "varsity jacket",
+        "party outfit"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Noah is on the Speaker-side group and becomes the right anchor for the final convergence.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [
+        "M07",
+        "M08"
+      ],
+      "solveByElimination": true,
+      "assetBaseId": "M05_BASE_L010",
+      "assetTrayId": "M05_TRAY_L010",
+      "reactionEvents": []
+    },
+    {
+      "id": "M06",
+      "name": "Ava",
+      "role": "Center guest with red cup",
+      "type": "M",
+      "answerSet": true,
+      "x": 645,
+      "y": 912,
+      "namePool": "FEMALE",
+      "appearance": [
+        "red cup",
+        "party outfit"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Ava is one of the three center guests. The red cup must be unmistakable at mobile size. Do not visually imply her exact center seat before the late convergence clue.",
+      "baseExpression": "😄",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M07",
+        "M08"
+      ],
+      "solveByElimination": false,
+      "assetBaseId": "M06_BASE_L010",
+      "assetTrayId": "M06_TRAY_L010",
+      "reactionEvents": []
+    },
+    {
+      "id": "M07",
+      "name": "Mason",
+      "role": "Speaker-side guest",
+      "type": "M",
+      "answerSet": true,
+      "x": 960,
+      "y": 882,
+      "namePool": "MALE",
+      "appearance": [
+        "white hoodie",
+        "party outfit"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "White hoodie identifies Mason. After correct placement, his GAMEPLAY reaction must clearly turn/point to Nina's adjacent truth slot (M08). Do not rely on a tiny eye direction; target readability is critical.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [],
+      "solveByElimination": false,
+      "assetBaseId": "M07_BASE_L010",
+      "assetTrayId": "M07_TRAY_L010",
+      "reactionEvents": [
+        {
+          "id": "RE_M07_01",
+          "triggerType": "SELF_PLACED",
+          "triggerChars": [],
+          "role": "Gameplay",
+          "affects": [
+            "M08"
+          ],
+          "steps": [
+            {
+              "id": "ST_M07_01",
+              "assetId": "M07_R01_L010",
+              "emotion": "😖",
+              "symbol": "🔊",
+              "gaze": "AUTO",
+              "target": "M08",
+              "duration": 0.6,
+              "hold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M08",
+      "name": "Nina",
+      "role": "Speaker-side guest with volume remote",
+      "type": "M",
+      "answerSet": true,
+      "x": 855,
+      "y": 894,
+      "namePool": "FEMALE",
+      "appearance": [
+        "volume remote",
+        "party outfit"
+      ],
+      "gender": "FEMALE",
+      "age": "young adult",
+      "artistNote": "Volume remote should be visible enough to support the story of Mason reacting to her.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [
+        "M07"
+      ],
+      "solveByElimination": false,
+      "assetBaseId": "M08_BASE_L010",
+      "assetTrayId": "M08_TRAY_L010",
+      "reactionEvents": []
+    },
+    {
+      "id": "M09",
+      "name": "Lucas",
+      "role": "Center guest / decoy",
+      "type": "M",
+      "answerSet": true,
+      "x": 435,
+      "y": 912,
+      "namePool": "MALE",
+      "appearance": [
+        "casual cap",
+        "casual party outfit"
+      ],
+      "gender": "MALE",
+      "age": "young adult",
+      "artistNote": "Lucas should look equally plausible as a normal center guest; do not visually imply Ryan is the culprit.",
+      "baseExpression": "🙂",
+      "baseGaze": "NONE",
+      "baseTarget": "",
+      "baseAffects": [],
+      "solveRequires": [
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M07",
+        "M08"
+      ],
+      "solveByElimination": false,
+      "assetBaseId": "M09_BASE_L010",
+      "assetTrayId": "M09_TRAY_L010",
+      "reactionEvents": []
+    }
+  ],
+  "clues": [
+    {
+      "id": "CL01",
+      "parent": null,
+      "text": "{M02}, {M03}, and {M04} took the three seats on the Photo Booth side",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "affects": [
+        "M02",
+        "M03",
+        "M04"
+      ]
+    },
+    {
+      "id": "CL02",
+      "parent": null,
+      "text": "The guest holding the gift bag sat somewhere to the right of the guest in silver boots",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M03",
+        "M04"
+      ],
+      "affects": [
+        "M03",
+        "M04"
+      ]
+    },
+    {
+      "id": "CL03",
+      "parent": null,
+      "text": "{M02} sat closer to the Photo Booth than the guest who already looked annoyed",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M02",
+        "M03"
+      ],
+      "affects": [
+        "M02",
+        "M03",
+        "M04"
+      ]
+    },
+    {
+      "id": "CL04",
+      "parent": null,
+      "text": "{M01}, {M06}, and {M09} took the three seats directly in front of {F01}",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M01",
+        "M06",
+        "M09"
+      ],
+      "affects": [
+        "M01",
+        "M06",
+        "M09"
+      ]
+    },
+    {
+      "id": "CL04.1",
+      "parent": null,
+      "text": "{M06} sat somewhere to the right of {M09}",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M06",
+        "M09"
+      ],
+      "affects": [
+        "M01",
+        "M06",
+        "M09"
+      ]
+    },
+    {
+      "id": "CL05",
+      "parent": null,
+      "text": "{M05}, {M07}, and {M08} took the three seats on the Speaker side",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M05",
+        "M07",
+        "M08"
+      ],
+      "affects": [
+        "M05",
+        "M07",
+        "M08"
+      ]
+    },
+    {
+      "id": "CL06",
+      "parent": null,
+      "text": "The guest in the white hoodie took the seat closest to the Speaker",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M07"
+      ],
+      "affects": [
+        "M07"
+      ]
+    },
+    {
+      "id": "CL08",
+      "parent": null,
+      "text": "With both side groups settled, {M04} and {M05} compare what they saw around the three center seats",
+      "preOpen": "ACTIVE",
+      "resolveWhen": [
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M07",
+        "M08"
+      ],
+      "affects": [
+        "M01",
+        "M06",
+        "M09"
+      ]
+    },
+    {
+      "id": "CL08.1",
+      "parent": "CL08",
+      "text": "There were the same number of seats between {M04} and {M01} as between {M01} and {M05}",
+      "preOpen": "LOCKED",
+      "resolveWhen": [
+        "M01",
+        "M06",
+        "M09"
+      ],
+      "affects": [
+        "M01",
+        "M06",
+        "M09"
+      ]
+    }
+  ],
+  "sceneEvidence": [
+    {
+      "id": "SE01",
+      "text": "The Photo Booth is fixed on the far-left side of the continuous guest seating row.",
+      "affects": [
+        "M02",
+        "M03",
+        "M04"
+      ]
+    },
+    {
+      "id": "SE02",
+      "text": "The main Speaker is fixed on the far-right side of the continuous guest seating row.",
+      "affects": [
+        "M05",
+        "M07",
+        "M08"
+      ]
+    },
+    {
+      "id": "SE03",
+      "text": "All nine guest seats form one continuous, evenly spaced left-to-right sequence, grouped as 3 left, 3 center and 3 right.",
+      "affects": [
+        "M01",
+        "M06",
+        "M09"
+      ]
+    },
+    {
+      "id": "SE04",
+      "text": "The three center guest seats are directly in front of the birthday girl.",
+      "affects": [
+        "M01",
+        "M06",
+        "M09"
+      ]
+    }
+  ],
+  "annotations": [
+    {
+      "id": "AN_PHOTO",
+      "type": "rect",
+      "x": 35,
+      "y": 120,
+      "w": 250,
+      "h": 390,
+      "fill": "#e9e2f3",
+      "stroke": "#655d69",
+      "text": "PHOTO BOOTH",
+      "textColor": "#514953",
+      "fontSize": 28,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 12,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_BDAY",
+      "type": "rect",
+      "x": 365,
+      "y": 140,
+      "w": 350,
+      "h": 360,
+      "fill": "#f7dfdf",
+      "stroke": "#655d69",
+      "text": "BIRTHDAY TABLE",
+      "textColor": "#514953",
+      "fontSize": 28,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 13,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_DJ",
+      "type": "rect",
+      "x": 770,
+      "y": 125,
+      "w": 270,
+      "h": 390,
+      "fill": "#e0e9f4",
+      "stroke": "#655d69",
+      "text": "DJ / SPEAKER",
+      "textColor": "#514953",
+      "fontSize": 28,
+      "strokeWidth": 4,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 14,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_ROW",
+      "type": "rect",
+      "x": 60,
+      "y": 800,
+      "w": 960,
+      "h": 230,
+      "fill": "#f7f3ee",
+      "stroke": "#bba998",
+      "text": "LEFT 3  |  CENTER 3  |  RIGHT 3",
+      "textColor": "#514953",
+      "fontSize": 22,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 5,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_SEAT_01",
+      "type": "rect",
+      "x": 82,
+      "y": 817,
+      "w": 76,
+      "h": 135,
+      "fill": "#ead9c5",
+      "stroke": "#8a715a",
+      "text": "",
+      "textColor": "#514953",
+      "fontSize": 20,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 9,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_SEAT_02",
+      "type": "rect",
+      "x": 187,
+      "y": 829,
+      "w": 76,
+      "h": 135,
+      "fill": "#ead9c5",
+      "stroke": "#8a715a",
+      "text": "",
+      "textColor": "#514953",
+      "fontSize": 20,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 10,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_SEAT_03",
+      "type": "rect",
+      "x": 292,
+      "y": 839,
+      "w": 76,
+      "h": 135,
+      "fill": "#ead9c5",
+      "stroke": "#8a715a",
+      "text": "",
+      "textColor": "#514953",
+      "fontSize": 20,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 11,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_SEAT_04",
+      "type": "rect",
+      "x": 397,
+      "y": 847,
+      "w": 76,
+      "h": 135,
+      "fill": "#ead9c5",
+      "stroke": "#8a715a",
+      "text": "",
+      "textColor": "#514953",
+      "fontSize": 20,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 12,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_SEAT_05",
+      "type": "rect",
+      "x": 502,
+      "y": 851,
+      "w": 76,
+      "h": 135,
+      "fill": "#ead9c5",
+      "stroke": "#8a715a",
+      "text": "",
+      "textColor": "#514953",
+      "fontSize": 20,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 13,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_SEAT_06",
+      "type": "rect",
+      "x": 607,
+      "y": 847,
+      "w": 76,
+      "h": 135,
+      "fill": "#ead9c5",
+      "stroke": "#8a715a",
+      "text": "",
+      "textColor": "#514953",
+      "fontSize": 20,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 14,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_SEAT_07",
+      "type": "rect",
+      "x": 712,
+      "y": 839,
+      "w": 76,
+      "h": 135,
+      "fill": "#ead9c5",
+      "stroke": "#8a715a",
+      "text": "",
+      "textColor": "#514953",
+      "fontSize": 20,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 15,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_SEAT_08",
+      "type": "rect",
+      "x": 817,
+      "y": 829,
+      "w": 76,
+      "h": 135,
+      "fill": "#ead9c5",
+      "stroke": "#8a715a",
+      "text": "",
+      "textColor": "#514953",
+      "fontSize": 20,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 16,
+      "visibleInPlay": true
+    },
+    {
+      "id": "AN_SEAT_09",
+      "type": "rect",
+      "x": 922,
+      "y": 817,
+      "w": 76,
+      "h": 135,
+      "fill": "#ead9c5",
+      "stroke": "#8a715a",
+      "text": "",
+      "textColor": "#514953",
+      "fontSize": 20,
+      "strokeWidth": 3,
+      "arrowXDir": 1,
+      "arrowYDir": 1,
+      "locked": false,
+      "z": 17,
+      "visibleInPlay": true
+    }
+  ],
+  "editorSchemaVersion": "1.28"
+}
